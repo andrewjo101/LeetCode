@@ -22,4 +22,4 @@ let sum2 = function(num,target){
         }
 
     }
-}
+};
