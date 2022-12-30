@@ -16,7 +16,7 @@ let maxProfit = function(prices){
     let l = 0, r = 1; 
     while (r < prices.length){
         //finds lowest price
-        if(prices[l] < prices[r]){
+        if(prices[l] > prices[r]){
             l = r; 
         }
         //calculate max profit 

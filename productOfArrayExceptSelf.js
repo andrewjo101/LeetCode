@@ -16,7 +16,6 @@ let productExceptSelf = function(nums) {
     //edge case for two zeros in the array
     const left = new Array(nums.length).fill(0);
     const right = new Array(nums.length).fill(0);
-
     left[0] = 1;
     right[right.length -1] = 1;
     //multiply the left side
