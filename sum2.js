@@ -23,3 +23,27 @@ let sum2 = function(num,target){
 
     }
 };
+
+
+
+
+
+
+
+
+// Optimized solution //
+const twoSum = (array, target) => {
+    
+    let numberMap = new Map();
+  
+    
+    for (let i = 0; i < array.length; i++) {
+      element = array[i];
+    
+      if (numberMap.has(target - element)) 
+        return [i, numberMap.get(target - element)];
+      else numberMap.set(element, i);
+    }
+  
+    return numberMap;
+  }
