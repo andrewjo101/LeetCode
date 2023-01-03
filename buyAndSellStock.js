@@ -9,20 +9,17 @@ Output: 5
 */
 
 
-let maxProfit = function(prices){
-    //create a variable to store max profit 
-    let max = 0;
-    //use a two pointer to search for lowest price to buy and highest price to sell 
-    let l = 0, r = 1; 
-    while (r < prices.length){
-        //finds lowest price
+let maxProfit = (prices) => {
+    //store max, create buying and selling pointers
+    let max = 0, l = 0, r = 1;
+
+    //iterate over the array, buying is less than the sell b = s; move over 1, store the max 
+    while(r < prices.length){
         if(prices[l] > prices[r]){
             l = r; 
         }
-        //calculate max profit 
-        max = Math.max(max, prices[r] - prices[l])
+        max = Math.max(max, prices[r] - prices[l]);
         r++;
     }
     return max;
-
 }
