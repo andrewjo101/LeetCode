@@ -32,18 +32,17 @@ let sum2 = function(num,target){
 
 
 // Optimized solution //
-const twoSum = (array, target) => {
-    
-    let numberMap = new Map();
+const twoSum = (nums, target) => {
+    //hash map
+    let mapNums = new Map();
   
     
-    for (let i = 0; i < array.length; i++) {
-      element = array[i];
-    
-      if (numberMap.has(target - element)) 
-        return [i, numberMap.get(target - element)];
-      else numberMap.set(element, i);
-    }
-  
-    return numberMap;
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
+        //check to see if it has complement value, return the index.
+        if(mapNums.has(complement)){
+            return [mapNums.get(complement), i]
+        }
+        mapNums.set(nums[i],i)
   }
+}
