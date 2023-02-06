@@ -12,22 +12,14 @@ Output: 23
  */
 
 function maxSubArray(nums) {
-    // edgecase if theres only one number
-    if(nums.length === 1){
-        return nums;
-    }
-    //iterate through each number, make a decision to use my current number or the accumalted number
+    let solution = nums[0];
 
-    let maxValue = nums[0];
-    let accValue = nums[0];
-
-    
-    for(i = 1; i < nums.length; i++){
-        let calcNum = Math.max(nums[i], accValue + nums[i]);
-        if(calcNum > maxValue){
-            maxValue = calcNum;
-        }
-        accValue = calcNum;
+    for(let i = 1; i < nums.length; i++){
+        nums[i] = Math.max(nums[i], nums[i] + nums[i -1])
+        solution = Math.max(solution, nums[i])
     }
-    return maxValue; 
+
+    return solution;
+
+
 };
